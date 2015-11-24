@@ -1,4 +1,4 @@
-Wordpress Staging
+Wordpress INTERNO
 -----------------
 ```
 sudo su
@@ -15,9 +15,9 @@ nano /etc/apache2/sites-enabled/000-default.conf
 <VirtualHost *:80>
         #ServerName example.com
         #ServerAlias www.example.com
-        DocumentRoot /var/www/staging
+        DocumentRoot /var/www/interno
 
-        <Directory /var/www/staging>
+        <Directory /var/www/interno>
                 Options -Indexes
                 AllowOverride All
                 Order allow,deny
@@ -30,13 +30,13 @@ rm -rf *
 cd ../
 mkdir staging
 cd staging
-git clone https://github.com/andrewpuch/wordpress_4_1_1.git .
+git clone https://github.com/facmello/wordpress_4_1_1.git .
 chmod -R 744 .
 chown -R www-data:www-data .
 
 service apache2 restart
 ```
-After Wordpress Is Configured
+Após a configuração incluir
 -----------------------------
 ```
 define('WP_REDIS_HOST', '');
